@@ -1,115 +1,109 @@
-# Rickroll Generator für YOURLS
+# Rickroll Generator for YOURLS
 
-Erstelle Rickroll-Links mit benutzerdefinierten Vorschaumetadaten in YOURLS.
+A big thank you for the inspiration from [BramvdnHeuvel](https://github.com/BramvdnHeuvel) and his [RickRoll-Generator](https://github.com/BramvdnHeuvel/Rickroll-Generator)!
 
-## Beschreibung
+Create Rickroll links with custom preview metadata in YOURLS.
 
-Der **Rickroll Generator** ist ein Plugin für [YOURLS](https://yourls.org/), einen selbst gehosteten URL-Verkürzungsdienst. Mit diesem Plugin kannst du spezielle Rickroll-Links erstellen, die beim Teilen auf Plattformen wie Discord, Facebook oder Twitter eine benutzerdefinierte Vorschau anzeigen. Die Vorschau zeigt einen von dir festgelegten Titel, eine Beschreibung und ein Bild, um Nutzer zum Klicken zu verleiten, bevor sie dann zum klassischen Rickroll-Video weitergeleitet werden.
+## Description
 
-## Funktionen
+The **Rickroll Generator** is a plugin for [YOURLS](https://yourls.org/), a self-hosted URL shortening service. With this plugin, you can create special Rickroll links that display a custom preview when shared on platforms like Discord, Facebook, or Twitter. The preview shows a title, description, and image you specify to entice users to click, redirecting them to the classic Rickroll video.
 
-- **Benutzerdefinierte Vorschaumetadaten**: Lege einen eigenen Titel, eine Beschreibung und ein Bild für die Link-Vorschau fest.
-- **Nahtlose Integration**: Funktioniert mit deiner bestehenden YOURLS-Installation.
-- **Einfach zu bedienen**: Einfache Oberfläche zum Erstellen von Rickroll-Links.
-- **Schnelle Weiterleitung**: Der Link leitet nach kurzer Verzögerung zur Ziel-URL weiter, sodass die Vorschau auf sozialen Plattformen angezeigt wird.
+## Features
+
+- **Custom Preview Metadata**: Set a unique title, description, and image for the link preview.
+- **Seamless Integration**: Works with your existing YOURLS setup.
+- **Easy to Use**: Simple interface for creating Rickroll links.
+- **Quick Redirection**: The link redirects to the target URL after a brief delay, allowing the preview to appear on social platforms.
 
 ## Installation
 
-1. **Plugin herunterladen**:
+1. **Download the Plugin**:
 
-   - Lade das Plugin aus dem [GitHub-Repository](https://github.com/bnfone/yourls-rickroll-generator) herunter oder klone es.
+   - Download the plugin from the [GitHub repository](https://github.com/bnfone/yourls-rickroll-generator) or clone it.
 
-2. **In YOURLS-Plugins-Verzeichnis hochladen**:
+2. **Upload to YOURLS Plugins Directory**:
 
-   - Lade den Plugin-Ordner `yourls-rickroll-generator` in das Verzeichnis `user/plugins` deiner YOURLS-Installation hoch.
+   - Upload the `yourls-rickroll-generator` folder to the `user/plugins` directory in your YOURLS installation.
 
-3. **Plugin aktivieren**:
+3. **Activate the Plugin**:
 
-   - Melde dich in deinem YOURLS-Adminbereich an.
-   - Gehe zur Seite "Manage Plugins" (Plugins verwalten).
-   - Aktiviere das Plugin "Rickroll Generator".
+   - Log in to your YOURLS admin area.
+   - Go to the "Manage Plugins" page.
+   - Enable the "Rickroll Generator" plugin.
 
-## Nutzung
+## Usage
 
-1. **Rickroll Generator aufrufen**:
+1. **Access Rickroll Generator**:
 
-   - Klicke im YOURLS-Adminbereich im Menü auf "Rickroll Generator".
+   - In the YOURLS admin area, click on "Rickroll Generator" in the menu.
 
-2. **Rickroll-Link erstellen**:
+2. **Create a Rickroll Link**:
 
-   - **Ziel-URL**: Gib die URL ein, zu der weitergeleitet werden soll (z. B. das Rickroll-Video auf YouTube).
-   - **Benutzerdefiniertes Keyword (optional)**: Wenn du ein bestimmtes Keyword für deine Kurz-URL möchtest, gib es hier ein.
-   - **Vorschau-Titel**: Gib den Titel ein, der in der Link-Vorschau angezeigt wird.
-   - **Vorschau-Beschreibung**: Gib die Beschreibung für die Link-Vorschau ein.
-   - **Vorschau-Bild-URL**: Gib die URL des Bildes ein, das in der Vorschau angezeigt werden soll.
+   - **Target URL**: Enter the URL to redirect to (e.g., the Rickroll video on YouTube).
+   - **Custom Keyword (optional)**: If you want a specific keyword for your short URL, enter it here.
+   - **Preview Title**: Enter the title to display in the link preview.
+   - **Preview Description**: Enter the description for the link preview.
+   - **Preview Image URL**: Enter the URL of the image to show in the preview.
 
-3. **Link generieren**:
+3. **Generate the Link**:
 
-   - Klicke auf die Schaltfläche "Link erstellen".
-   - Das Plugin erstellt eine neue Kurz-URL mit den angegebenen Vorschaumetadaten.
+   - Click the "Create Link" button.
+   - The plugin will create a new short URL with the specified preview metadata.
 
-4. **Link teilen**:
+4. **Share the Link**:
 
-   - Teile die generierte Kurz-URL auf sozialen Medien oder in Messaging-Apps.
-   - Die benutzerdefinierte Vorschau wird angezeigt und verleitet Nutzer zum Klicken.
+   - Share the generated short URL on social media or in messaging apps.
+   - The custom preview will display, enticing users to click.
 
-## Funktionsweise
+## How It Works
 
-- **Speicherung der Metadaten**: Das Plugin speichert die benutzerdefinierten Vorschaumetadaten (Titel, Beschreibung, Bild) als JSON-kodierten String im `title`-Feld der YOURLS-Datenbank.
+- **Storing Metadata**: The plugin saves the custom preview metadata (title, description, image) as a JSON-encoded string in the `title` field of the YOURLS database.
 
-- **Anzeigen der Vorschau**: Wenn die Kurz-URL aufgerufen wird, fängt das Plugin den Weiterleitungsprozess ab und zeigt eine benutzerdefinierte Vorschauseite an, die die Open Graph Meta-Tags mit deinen angegebenen Metadaten enthält.
+- **Displaying the Preview**: When the short URL is accessed, the plugin intercepts the redirection process and shows a custom preview page containing Open Graph meta tags with your specified metadata.
 
-- **Automatische Weiterleitung**: Nach einer kurzen Verzögerung (standardmäßig 1,5 Sekunden) leitet die Seite den Nutzer mithilfe von JavaScript automatisch zur Ziel-URL weiter.
+- **Automatic Redirection**: After a brief delay (default 1.5 seconds), the page automatically redirects the user to the target URL using JavaScript.
 
-- **Kompatibilität mit sozialen Plattformen**: Durch Setzen des HTTP-Status auf 200 und Bereitstellen der Open Graph Meta-Tags können soziale Medien beim Teilen des Links die benutzerdefinierte Vorschau anzeigen.
+- **Social Platform Compatibility**: By setting the HTTP status to 200 and providing Open Graph meta tags, social media platforms can display the custom preview when the link is shared.
 
-## Konfiguration
+## Configuration
 
-- **Weiterleitungsverzögerung**:
+- **Redirection Delay**:
 
-  - Die Weiterleitungsverzögerung ist standardmäßig auf 1,5 Sekunden eingestellt.
-  - Du kannst die Verzögerung anpassen, indem du den Wert in der JavaScript-`setTimeout`-Funktion in der Funktion `rickroll_show_preview` im Plugin-Code änderst.
+  - The redirection delay is set to 1.5 seconds by default.
+  - You can adjust the delay by modifying the value in the JavaScript `setTimeout` function in the `rickroll_show_preview` function in the plugin code.
 
   ```javascript
   setTimeout(function () {
       window.location.href = "<?php echo htmlspecialchars($link['url']); ?>";
-  }, 1500); // Passe die Verzögerung in Millisekunden an
+  }, 1500); // Adjust the delay in milliseconds
   ```
 
-## Anforderungen
+## Requirements
 
-- **YOURLS**: Dieses Plugin erfordert YOURLS Version 1.7 oder höher.
+- **YOURLS**: This plugin requires YOURLS version 1.7 or higher.
 
-## Fehlerbehebung
+## Troubleshooting
 
-- **Probleme bei der Plugin-Aktivierung**:
+- **Issues Activating the Plugin**:
 
-  - Solltest du Fehler bei der Aktivierung des Plugins erhalten, stelle sicher, dass deine YOURLS-Installation die Versionsanforderungen erfüllt.
-  - Überprüfe auf Konflikte mit anderen Plugins, die die URL-Weiterleitung oder Metadatenverarbeitung beeinflussen könnten.
+  - If you encounter errors activating the plugin, ensure your YOURLS installation meets the version requirements.
+  - Check for conflicts with other plugins that might affect URL redirection or metadata handling.
 
-- **Vorschau wird auf sozialen Plattformen nicht angezeigt**:
+- **Preview Not Displaying on Social Platforms**:
 
-  - Manche Plattformen cachen die Vorschau-Daten. Nutze deren Debugging-Tools (z. B. den Facebook Sharing Debugger), um den Cache zu aktualisieren.
-  - Stelle sicher, dass die Weiterleitungsverzögerung ausreichend ist, damit die Plattform die Metadaten auslesen kann (1–2 Sekunden werden empfohlen).
+  - Some platforms cache preview data. Use their debugging tools (e.g., Facebook Sharing Debugger) to refresh the cache.
+  - Ensure that the redirection delay is sufficient for the platform to read the metadata (1–2 seconds is recommended).
 
-## Lizenz
+## Contributing
 
-Dieses Plugin ist Open-Source und unter der MIT-Lizenz veröffentlicht. Siehe die [LICENSE](https://github.com/bnfone/yourls-rickroll-generator/blob/main/LICENSE)-Datei für Details.
+Contributions are welcome! If you find a bug or have a feature request, please open an issue on the [GitHub repository](https://github.com/bnfone/yourls-rickroll-generator).
 
-## Autor
+## Acknowledgments
 
-- **Benedikt Fischer**
-- Website: [https://bnfone.com/](https://bnfone.com/)
-
-## Mitwirken
-
-Beiträge sind willkommen! Wenn du einen Fehler findest oder einen Feature-Wunsch hast, öffne bitte ein Issue im [GitHub-Repository](https://github.com/bnfone/yourls-rickroll-generator).
-
-## Danksagungen
-
-- Dank an die YOURLS-Community für die Bereitstellung einer erweiterbaren Plattform für URL-Verkürzungen.
-- Dieses Plugin wurde inspiriert von dem Wunsch, ein wenig Spaß und Überraschung in geteilte Links zu bringen.
+- Thanks to the YOURLS community for providing an extendable platform for URL shortening.
+- This plugin was inspired by the desire to bring a bit of fun and surprise to shared links.
+- [BramvdnHeuvel](https://github.com/BramvdnHeuvel)'s [RickRoll-Generator](https://github.com/BramvdnHeuvel/Rickroll-Generator) and his inspiring [YouTube Video](https://www.youtube.com/watch?v=HyNGb8T7LvM)!
 
 ---
 
-**Viel Spaß beim Rickrollen!**
+**Enjoy Rickrolling!**
