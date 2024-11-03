@@ -180,7 +180,7 @@ function rickroll_show_preview($args)
         <script type="text/javascript">
             setTimeout(function () {
                 window.location.href = "<?php echo htmlspecialchars($link['url']); ?>";
-            }, 1500); // Weiterleitung nach 1,5 Sekunden
+            }, 0); // Weiterleitung nach 0 Sekunden
         </script>
 
         <?php if (defined('YOURLS_DEBUG') && YOURLS_DEBUG): ?>
