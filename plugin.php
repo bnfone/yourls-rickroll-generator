@@ -169,18 +169,13 @@ function rickroll_show_preview($args)
         </style>
     </head>
     <body>
-        <h1><?php echo htmlspecialchars($meta->title); ?></h1>
-        <p><?php echo htmlspecialchars($meta->description); ?></p>
-        <?php if (!empty($meta->image)): ?>
-            <img src="<?php echo htmlspecialchars($meta->image); ?>" alt="Vorschaubild" style="max-width: 100%;">
-        <?php endif; ?>
         <p>Sie werden in wenigen Sekunden weitergeleitet...</p>
 
         <!-- JavaScript-Weiterleitung mit verkürzter Zeit -->
         <script type="text/javascript">
             setTimeout(function () {
                 window.location.href = "<?php echo htmlspecialchars($link['url']); ?>";
-            }, 0); // Weiterleitung nach 0 Sekunden
+            }, 50); // Weiterleitung nach 0,05 Sekunden
         </script>
 
         <?php if (defined('YOURLS_DEBUG') && YOURLS_DEBUG): ?>
