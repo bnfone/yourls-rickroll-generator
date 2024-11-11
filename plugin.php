@@ -2,10 +2,10 @@
 /*
 Plugin Name: Rickroll Generator
 Plugin URI: https://github.com/bnfone/yourls-rickroll-generator
-Description: Erstelle Rickroll-Links mit benutzerdefinierten Vorschaumetadaten
-Version: 1.1
-Author: Benedikt Fischer
-Author URI: https://bnfone.com/
+Description: Create rickroll links with customised preview metadata.
+Version: 1.0
+Author: Blake
+Author URI: https://github.com/bnfone/
 */
 
 // Direkter Aufruf verhindern
